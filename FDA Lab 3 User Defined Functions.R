@@ -22,4 +22,11 @@ add_numbers <- function(number1, number2= 7){
 
 add_numbers(7)
 
-# 
+# How do you return multiple values from a user defined function in R?
+
+return_multiple_values <- function(x,y) {
+  return (list(x+y, x-y))
+}
+
+return_multiple_values(10,20)
+
