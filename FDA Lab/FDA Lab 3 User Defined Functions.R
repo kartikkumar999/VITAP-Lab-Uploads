@@ -30,3 +30,13 @@ return_multiple_values <- function(x,y) {
 
 return_multiple_values(10,20)
 
+# Can you include other user defined functions within a user defined function in R?
+
+subtract_function <- function(x, y) { 
+  # do something with x and y
+  z <- do.call("add_function", list(x+y) 
+  # do something with z 
+}
+#In the above function we are returning the value of x and y and passing it to 
+# out new function named other function !
+subtract_function(2,3)
