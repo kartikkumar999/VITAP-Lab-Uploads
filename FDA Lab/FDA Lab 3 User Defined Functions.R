@@ -69,5 +69,23 @@ my_function(4)
 
 # How do you debug a user defined function in R?
 
+my_function8 <- function(x, y) {
+  # set breakpoint at this line
+  browser()
+  # do something with x and y
+  z <- x + y
+  # set another breakpoint here
+  browser()
+  # return z
+  return(z)
+}
 
+# trace the function
+trace(my_function, tracer = browser)
+
+# call the function
+result <- my_function(3, 4)
+
+#+ How can you write a user defined function in R that performs a task and then returns the
+#+ original inputs?
 
