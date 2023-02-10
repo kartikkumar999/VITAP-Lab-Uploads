@@ -89,3 +89,24 @@ result <- my_function(3, 4)
 #+ How can you write a user defined function in R that performs a task and then returns the
 #+ original inputs?
 
+my_function9 <- function(x,y) {
+  result <- x + y
+  return(list(x,y,result))
+}
+
+
+my_function9(2,4)
+
+#+ What is the purpose of using user defined functions in R? How does it simplify your code? 
+
+#+ The primary purpose of using user defined functions in R is to simplify and
+#+ organize your code by breaking it up into smaller, more manageable pieces
+#+  that can be reused and modified easily. By having code in a function, 
+#+ you can reduce the amount of code you need to write and make it more readable
+#+ and maintainable. This can make it much easier to debug and modify your code,
+#+ as well as make it more efficient by avoiding redundant code. Additionally, 
+#+ it can make it easier to share your code with others, as functions provide 
+#+a clear and concise way to explain how your code works.
+
+
+
