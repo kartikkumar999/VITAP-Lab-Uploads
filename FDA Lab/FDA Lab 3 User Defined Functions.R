@@ -126,11 +126,101 @@ factorial(6)
 #+ Write a function that takes a vector and returns the mean, median and standard deviation of
 #+ the elements in the vector.
 
-statistics <- function(vec){
+
+statistics <- function(vec) {
   mean_val <- mean(vec)
   median_val <- median(vec)
   sd_val <- sd(vec)
-  
-  return (c(mean = mean_val, median = median_val = sd = sd_val))
+  return(c(mean = mean_val, median = median_val, sd = sd_val))
+}
+
+statistics(c(1,32,3,4,5,6,87))
+
+
+#+ Write a function to find the maximum value in a list and its position.
+
+find_max_value_position <- function(list){
+  max_value <- list[1]
+  max_position <- 1
+  for (i in 2:length(list)){
+    if (list[i] > max_value){
+      max_value <- list[i]
+      max_position <- i
+    }
+  }
+  return(list(max_value, max_position))
+}
+
+find_max_value_position(c(1,2,3,4,5,6,76,7,0))
+
+#+ Write a function to check if a number is a prime or not.
+
+is_prime <- function(n) {
+  if (n < 2) {
+    return(FALSE)
+  }
+  for (i in 2:(n-1)) {
+    if (n %% i == 0) {
+      return(FALSE)
+    }
+  }
+  return(TRUE)
+}
+
+is_prime(3)
+
+#+ Write a function that takes two strings as input and returns the number of times the second
+#+ string appears in the first. 
+
+count_substring <- function(string1, string2){
+  count <- 0
+  for (i in 1:(nchar(string1)-nchar(string2)+1)){
+    if (substr(string1,i,i+nchar(string2)-1) == string2)
+      count <- count + 1
+  }
+  return(count)
+}
+
+#+ Write a function that calculates the sum of squares of the first &#39;n&#39; natural numbers.
+sum_of_squares <- function(n){
+  sum <- 0
+  for (i in 1:n){
+    sum <- sum + i^2
+  }
+  return(sum)
+}
+
+sum_of_squares(8)
+
+# Write a function to sort a matrix by the values in a specific column.
+
+sort_matrix_by_column <- function(matrix, column) {
+  sorted_matrix <- matrix[order(matrix[,column]),]
+  return(sorted_matrix)
+}
+
+
+# Write a function to find the average of the numbers in a specific column of a matrix.
+
+average_of_column <- function(matrix, column) {
+  average <- mean(matrix[,column])
+  return(average)
+}
+
+# Write a function to convert a character string to title case (i.e. the first letter of each word is
+#+ capitalized).
+
+to_title_case <- function(string) {
+  words <- strsplit(string, ' ')[[1]]
+  words <- toupper(substr(words, 1, 1)) + tolower(substr(words, 2, nchar(words)))
+  return(paste(words, collapse=' '))
+}
+
+# Write a function that takes two matrices as input and returns their element-wise product (i.e.
+#+ Hadamard product).
+
+hadamard_product <- function(matrix1, matrix2) {
+  product <- matrix1 * matrix2
+  return(product)
 }
 
