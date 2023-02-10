@@ -107,6 +107,30 @@ my_function9(2,4)
 #+ as well as make it more efficient by avoiding redundant code. Additionally, 
 #+ it can make it easier to share your code with others, as functions provide 
 #+a clear and concise way to explain how your code works.
+#+
 
+#+ Write a function to calculate the factorial of a given number.
 
+factorial <- function(n){
+  if (n <=1){
+    return (1)
+  }
+  else {
+    return(n* factorial(n-1))
+    
+  }
+}
+
+factorial(6)
+
+#+ Write a function that takes a vector and returns the mean, median and standard deviation of
+#+ the elements in the vector.
+
+statistics <- function(vec){
+  mean_val <- mean(vec)
+  median_val <- median(vec)
+  sd_val <- sd(vec)
+  
+  return (c(mean = mean_val, median = median_val = sd = sd_val))
+}
 
